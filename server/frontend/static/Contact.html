@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Best Cars Dealership</title>
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .contact-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .contact-header h1 {
+            color: #00CED1; /* darkturquoise */
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-method {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-method:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-method h3 {
+            color: #00CED1;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            font-size: 2.5rem;
+            color: #00CED1;
+            margin-bottom: 20px;
+        }
+        
+        .contact-form {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-control {
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 12px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: #00CED1;
+            box-shadow: 0 0 0 0.2rem rgba(0, 206, 209, 0.25);
+        }
+        
+        .btn-contact {
+            background-color: #00CED1;
+            color: white;
+            padding: 12px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-contact:hover {
+            background-color: #00B7C3;
+            color: white;
+        }
+        
+        .business-hours {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+        
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .hours-table tr {
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .hours-table td {
+            padding: 12px 0;
+        }
+        
+        .hours-table td:last-child {
+            font-weight: bold;
+            color: #495057;
+        }
+        
+        .map-container {
+            margin-top: 40px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info-item i {
+            color: #00CED1;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: darkturquoise; height: 1in;">
+        <div class="container-fluid">
+            <h2 style="padding-right: 5%;">Best Cars Dealership</h2>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" 
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" style="font-size: larger;" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="font-size: larger;" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" style="font-size: larger;" href="/contact">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Content -->
+    <div class="contact-container">
+        <div class="contact-header">
+            <h1>Contact Us</h1>
+            <p class="lead">Get in touch with our team for any inquiries, test drives, or assistance</p>
+        </div>
+
+        <div class="row">
+            <!-- Contact Methods -->
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="contact-method text-center">
+                            <div class="contact-icon">📞</div>
+                            <h3>Phone Support</h3>
+                            <p class="card-text">Call us directly for immediate assistance</p>
+                            <h4>+1 (555) 123-4567</h4>
+                            <p>Mon-Fri: 8am-8pm EST</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="contact-method text-center">
+                            <div class="contact-icon">✉️</div>
+                            <h3>Email Us</h3>
+                            <p class="card-text">Send us an email for detailed inquiries</p>
+                            <h4>info@bestcars.com</h4>
+                            <p>Response within 24 hours</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3 class="mb-4">Send us a Message</h3>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select class="form-control" id="subject" required>
+                                <option value="">Select a topic</option>
+                                <option value="sales">Car Sales Inquiry</option>
+                                <option value="testdrive">Schedule Test Drive</option>
+                                <option value="service">Service & Maintenance</option>
+                                <option value="finance">Financing Options</option>
+                                <option value="other">Other Inquiry</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-contact">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="col-lg-4">
+                <div class="contact-method">
+                    <h3>Visit Our Showroom</h3>
+                    <div class="contact-info-item">
+                        <i>📍</i>
+                        <div>
+                            <strong>Main Showroom</strong><br>
+                            1234 Auto Avenue<br>
+                            Detroit, MI 48226<br>
+                            United States
+                        </div>
+                    </div>
+                    
+                    <div class="business-hours">
+                        <h4>Business Hours</h4>
+                        <table class="hours-table">
+                            <tr>
+                                <td>Monday - Friday</td>
+                                <td>9:00 AM - 8:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Saturday</td>
+                                <td>10:00 AM - 6:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Sunday</td>
+                                <td>11:00 AM - 5:00 PM</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="contact-info-item mt-4">
+                        <i>👥</i>
+                        <div>
+                            <strong>Sales Team</strong><br>
+                            sales@bestcars.com<br>
+                            +1 (555) 234-5678
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <i>🔧</i>
+                        <div>
+                            <strong>Service Department</strong><br>
+                            service@bestcars.com<br>
+                            +1 (555) 345-6789
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <i>💰</i>
+                        <div>
+                            <strong>Finance Department</strong><br>
+                            finance@bestcars.com<br>
+                            +1 (555) 456-7890
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="map-container">
+            <div style="background: #e9ecef; padding: 30px; text-align: center;">
+                <h4>Our Location</h4>
+                <p class="mb-4">Visit our spacious showroom in downtown Detroit</p>
+                <!-- This would typically be a Google Maps embed -->
+                <div style="height: 300px; background: linear-gradient(to right, #f8f9fa, #e9ecef); 
+                          display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; color: #00CED1; margin-bottom: 20px;">📍</div>
+                        <h5>Best Cars Dealership</h5>
+                        <p>1234 Auto Avenue, Detroit, MI 48226</p>
+                        <p>Parking available on-site</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/bootstrap.bundle.min.js"></script>
+</body>
+</html>
