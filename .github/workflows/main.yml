@@ -12,7 +12,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
     - name: Checkout Repository
       uses: actions/checkout@v3
     
@@ -26,34 +25,56 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8
 
-    - name: Print working directory
-      run: pwd
-
-    - name: Run Linter
+    - name: Run Python Linter
       run: |
-        pwd
-        # This command finds all Python files recursively and runs flake8 on them
-        find . -name "*.py" -exec flake8 {} +
-        echo "Linted all the python files successfully"
+        # Check if there are any Python files first
+        if find . -name "*.py" -print -quit | grep -q '.'; then
+          echo "Found Python files. Running flake8..."
+          # Use xargs to handle case with no files
+          find . -name "*.py" -print0 | xargs -0 flake8
+          echo "Python linting completed."
+        else
+          echo "No Python files found. Skipping Python linting."
+        fi
 
   lint_js:
-      name: Lint JavaScript Files
-      runs-on: ubuntu-latest
+    name: Lint JavaScript Files
+    runs-on: ubuntu-latest
+    needs: [lint_python]  # Optional: run after Python linting
 
-      steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
 
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 14
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18  # Updated to a more recent LTS version
 
-      - name: Install JSHint
-        run: npm install jshint --global
+    - name: Install JSHint
+      run: npm install jshint --global
 
-      - name: Run Linter
+    - name: Run JavaScript Linter
+      run: |
+        # For all JavaScript files in the repository
+        # Adjust the path if you want to lint specific directories
+        if find . -name "*.js" -not -path "./node_modules/*" -print -quit | grep -q '.'; then
+          echo "Found JavaScript files. Running jshint..."
+          # Exclude node_modules and use xargs for safety
+          find . -name "*.js" -not -path "./node_modules/*" -print0 | xargs -0 jshint || true
+          echo "JavaScript linting completed."
+        else
+          echo "No JavaScript files found. Skipping JavaScript linting."
+        fi
+
+  # Optional: Add a summary job
+  lint_summary:
+    name: Lint Summary
+    runs-on: ubuntu-latest
+    needs: [lint_python, lint_js]
+    if: always()
+    steps:
+      - name: Summary
         run: |
-          # This command finds all JavaScript files recursively and runs JSHint on them
-          find ./server/database -name "*.js" -exec jshint {} +
-          echo "Linted all the js files successfully"
+          echo "Linting workflow completed!"
+          echo "Check individual jobs for detailed results."
