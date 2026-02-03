@@ -24,6 +24,29 @@
             margin-bottom: 20px;
         }
         
+        .contact-image-section {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .contact-image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cars-image-section {
+            margin-bottom: 30px;
+        }
+        
+        .cars-image-section img {
+            max-height: 400px;
+            object-fit: cover;
+            width: 100%;
+            border-radius: 10px;
+        }
+        
         .contact-method {
             background: #f8f9fa;
             border-radius: 10px;
@@ -129,6 +152,13 @@
             margin-right: 15px;
             font-size: 1.2rem;
         }
+        
+        .image-caption {
+            color: #666;
+            font-style: italic;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
@@ -158,9 +188,21 @@
 
     <!-- Contact Content -->
     <div class="contact-container">
+        <!-- Required Image: contactus.png -->
+        <div class="contact-image-section">
+            <img src="/static/contactus.png" alt="Contact Us - Best Cars Dealership" />
+            <p class="image-caption">Our friendly team is ready to assist you with all your automotive needs</p>
+        </div>
+        
         <div class="contact-header">
             <h1>Contact Us</h1>
             <p class="lead">Get in touch with our team for any inquiries, test drives, or assistance</p>
+        </div>
+
+        <!-- Required Image: cars.jpeg -->
+        <div class="cars-image-section">
+            <img src="/static/cars.jpeg" alt="Our Premium Car Collection" />
+            <p class="image-caption">Explore our premium collection of vehicles at our state-of-the-art showroom</p>
         </div>
 
         <div class="row">
